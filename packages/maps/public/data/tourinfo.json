@@ -1,0 +1,47 @@
+{
+  "tours": [
+    {
+      "id": "JT",
+      "name": "ITF World Tennis Tour - Juniors",
+      "type": "itf",
+      "yearfrom": 2010,
+      "yearto": 2024
+    },
+    {
+      "id": "MT",
+      "name": "ITF World Tennis Tour - Men",
+      "type": "itf",
+      "yearfrom": 2010,
+      "yearto": 2024
+    },
+    {
+      "id": "WT",
+      "name": "ITF World Tennis Tour - Women",
+      "type": "itf",
+      "yearfrom": 2010,
+      "yearto": 2024
+    },
+
+    {
+      "id": "TE12",
+      "name": "Tennis Europe 12&U",
+      "type": "te",
+      "yearfrom": 2010,
+      "yearto": 2024
+    },
+    {
+      "id": "TE14",
+      "name": "Tennis Europe 14&U",
+      "type": "te",
+      "yearfrom": 2010,
+      "yearto": 2024
+    },
+    {
+      "id": "TE16",
+      "name": "Tennis Europe 16&U",
+      "type": "te",
+      "yearfrom": 2010,
+      "yearto": 2024
+    }
+  ]
+}

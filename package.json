@@ -1,0 +1,13 @@
+{
+  "name": "tennismaps",
+  "version": "1.0.0",
+  "description": "Tennis Maps GIS monorepo",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "./packages/*"
+    ]
+  },
+  "dependencies": {
+  }
+}

@@ -1,0 +1,83 @@
+:root {
+  --clay: rgb(206, 103, 0);
+  --carpet: rgb(131, 182, 8);
+  --hard: rgb(3, 136, 220);
+  --grass: rgb(2, 164, 59);
+  --other: rgb(160, 160, 160);
+}
+
+.surface-color {
+  color: white;
+}
+
+.clay-fill {
+  @extend .surface-color;
+  fill: var(--clay);
+  background-color: var(--clay);
+  border: 1px solid var(--clay);
+}
+
+.carpet-fill {
+  @extend .surface-color;
+  fill: var(--carpet);
+  background-color: var(--carpet);
+  border: 1px solid var(--carpet);
+}
+
+.hard-fill {
+  @extend .surface-color;
+  fill: var(--hard);
+  background-color: var(--hard);
+  border: 1px solid var(--hard);
+}
+
+.grass-fill {
+  @extend .surface-color;
+  fill: var(--grass);
+  background-color: var(--grass);
+  border: 1px solid var(--grass);
+}
+
+.other-fill {
+  @extend .surface-color;
+  fill: var(--other);
+  background-color: var(--other);
+  border: 1px solid var(--other);
+}
+
+.small-badge {
+  @extend .nowrap;
+  padding: 0 3px;
+  font-weight: normal;
+  font-size: 0.75rem;
+  border-radius: 0.2rem;
+}
+
+.indoors-badge {
+  @extend .small-badge;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+.outdoors-badge {
+  @extend .small-badge;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.live {
+  animation: animate 1s linear infinite;
+  color: rgb(255, 0, 0);
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

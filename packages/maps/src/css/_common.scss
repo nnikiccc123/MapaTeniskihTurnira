@@ -1,0 +1,48 @@
+.noselect {
+  user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.nopointer {
+  cursor: default;
+}
+
+.popup-window {
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 0.3rem;
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    padding: 0.5rem 0.2rem;
+  }
+}
+
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.horizontal-flex-wrapped {
+  @extend .horizontal-flex;
+  flex-wrap: wrap;
+}
+
+select {
+  border: 1px solid gray;
+  border-radius: 0.2rem;
+}

@@ -1,0 +1,65 @@
+@import 'common.scss';
+@import 'ui.scss';
+@import 'components.scss';
+@import 'tennis.scss';
+
+:root {
+  --popup-bg: rgb(255, 255, 255);
+  --popup-fg: rgb(0, 0, 0);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  overscroll-behavior: none;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.main-grid-wrapper {
+  height: 100%;
+  max-height: 100%;
+}
+
+.fullscreen {
+  overflow: hidden;
+  position: relative;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (orientation: portrait) {
+  .fullscreen {
+    flex-direction: column-reverse;
+  }
+}
+
+.map {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.modal-dialog-wrapper {
+  @extend .noselect;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}

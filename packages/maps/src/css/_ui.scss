@@ -1,0 +1,57 @@
+button {
+  font-size: 0.8rem;
+  outline: none;
+  background-color: rgb(3, 103, 166);
+  color: white;
+  fill: white;
+  border-radius: 0.2rem;
+  border: 0;
+  padding: 0.3rem 0.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+button:disabled {
+  color: rgba(200, 200, 200, 0.5);
+  fill: rgba(200, 200, 200, 0.5);
+}
+
+
+.touched-button {
+  background-color: rgb(4, 138, 222);
+}
+
+.checkbox {
+  @extend .horizontal-flex;
+  @extend .nowrap;
+  @extend .noselect;
+  cursor: pointer;
+  padding: 0 0.4rem;
+  .label {
+    margin-left: 0.3rem;
+    font-size: 0.9em;
+  }
+  fill: rgba(3, 103, 166, 0.84);
+}
+
+.checkbox-toggle {
+  @extend .horizontal-flex;
+  @extend .nowrap;
+  @extend .noselect;
+  cursor: pointer;
+  padding: 0.1rem 0.4rem;
+  font-weight: normal;
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  border: 2px solid rgba(3, 103, 166, 0.84);
+  border-radius: 0.2rem;
+}
+
+.checkbox-toggle-selected {
+  @extend .checkbox-toggle;
+  background-color: rgba(3, 103, 166, 0.84);
+  color: white;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "mapsdatafetch",
+  "version": "0.0.1",
+  "description": "Tool for downloading various data for map apps",
+  "keywords": [],
+  "author": "Natalija Nikic",
+  "license": "ISC",
+  "scripts": {
+    "te": "node te.js",
+    "itf": "node itf.js"
+  },
+  "dependencies": {
+    "find-chrome-bin": "^1.0.2",
+    "puppeteer-core": "^15.5.0"
+  }
+}

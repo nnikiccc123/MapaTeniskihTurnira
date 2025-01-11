@@ -1,0 +1,571 @@
+.noselect, .modal-dialog-wrapper, .month-range-chooser, .tour-filter .header, .checkbox-toggle, .checkbox-toggle-selected, .checkbox {
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.nowrap, .small-badge, .outdoors-badge, .indoors-badge, .feature-tooltip .bottom-info, .feature-tooltip .name-line .name, .feature-tooltip .name-line, .feature-tooltip .header .location, .feature-tooltip .header .date, .tour-sidebar-compact .date, .tour-sidebar th, .checkbox-toggle, .checkbox-toggle-selected, .checkbox {
+  white-space: nowrap;
+}
+
+.pointer, .zoom-control .zoom-button, .feature-tooltip .tournament, .month-range-chooser .month, .month-range-chooser .month-mobile, .tour-selection-header h1, .tour-selection-header .logo, .tour-sidebar tr {
+  cursor: pointer;
+}
+
+.nopointer {
+  cursor: default;
+}
+
+.popup-window {
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 0.3rem;
+}
+.popup-window .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+  padding: 0.5rem 0.2rem;
+}
+
+.horizontal-flex, .tour-filter .resizer, .checkbox-toggle, .checkbox-toggle-selected, .checkbox, .horizontal-flex-wrapped {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.horizontal-flex-wrapped {
+  flex-wrap: wrap;
+}
+
+select {
+  border: 1px solid gray;
+  border-radius: 0.2rem;
+}
+
+button {
+  font-size: 0.8rem;
+  outline: none;
+  background-color: rgb(3, 103, 166);
+  color: white;
+  fill: white;
+  border-radius: 0.2rem;
+  border: 0;
+  padding: 0.3rem 0.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+button:disabled {
+  color: rgba(200, 200, 200, 0.5);
+  fill: rgba(200, 200, 200, 0.5);
+}
+
+.touched-button {
+  background-color: rgb(4, 138, 222);
+}
+
+.checkbox {
+  cursor: pointer;
+  padding: 0 0.4rem;
+  fill: rgba(3, 103, 166, 0.84);
+}
+.checkbox .label {
+  margin-left: 0.3rem;
+  font-size: 0.9em;
+}
+
+.checkbox-toggle, .checkbox-toggle-selected {
+  cursor: pointer;
+  padding: 0.1rem 0.4rem;
+  font-weight: normal;
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  border: 2px solid rgba(3, 103, 166, 0.84);
+  border-radius: 0.2rem;
+}
+
+.checkbox-toggle-selected {
+  background-color: rgba(3, 103, 166, 0.84);
+  color: white;
+}
+
+.tour-sidebar {
+  padding: 0.4em;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.tour-sidebar table {
+  cursor: default;
+  width: 100%;
+}
+.tour-sidebar td {
+  padding: 0.2em 0.2em;
+}
+.tour-sidebar th {
+  text-align: left;
+  padding: 0.5em 0.2em;
+}
+.tour-sidebar tr:hover {
+  background-color: rgba(3, 103, 166, 0.24);
+}
+.tour-sidebar .count-info {
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+
+.tour-table-container {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+@media screen and (orientation: portrait) {
+  .tour-table-container {
+    padding: 0 0.4rem;
+  }
+}
+
+.tour-selection-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(to right, rgba(4, 77, 124, 0.84), rgba(56, 147, 204, 0.84));
+  padding: 0.2rem 0.5rem;
+}
+.tour-selection-header .logo {
+  display: block;
+  margin-right: 0.5rem;
+}
+.tour-selection-header .logo img {
+  width: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20%;
+}
+.tour-selection-header .yearBadge {
+  margin-left: 0.4rem;
+  font-size: 0.8em;
+  background-color: white;
+  color: #0367a6;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+}
+.tour-selection-header h1 {
+  font-size: 0.9rem;
+}
+@media screen and (orientation: portrait) {
+  .tour-selection-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .tour-sidebar {
+    max-width: 50rem;
+    min-width: 50rem;
+  }
+}
+.tour-sidebar-compact td {
+  padding: 0.2rem 0;
+}
+.tour-sidebar-compact .date {
+  font-size: 0.9em;
+  margin-right: 0.4em;
+}
+.tour-sidebar-compact .location {
+  font-size: 0.9em;
+  color: rgb(100, 100, 100);
+}
+.tour-sidebar-compact .link {
+  margin-left: 0.4em;
+}
+@media screen and (orientation: landscape) {
+  .tour-sidebar-compact {
+    max-width: 28rem;
+    min-width: 28rem;
+  }
+}
+@media screen and (orientation: portrait) {
+  .tour-sidebar-compact {
+    padding: 0 0 0.4em 0;
+    max-height: 40vh;
+    min-height: 40vh;
+    width: 100%;
+  }
+}
+
+.tour-filter {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(104, 154, 187, 0.2);
+  margin: 0.4em 0;
+  display: flex;
+  flex-direction: column;
+}
+.tour-filter .header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.2rem 0.4rem;
+  z-index: 22;
+}
+.tour-filter .header a {
+  cursor: pointer;
+}
+.tour-filter .header a:hover {
+  color: rgb(100, 150, 240);
+}
+.tour-filter .header .title-date-range {
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.tour-filter .header button {
+  z-index: 300;
+}
+.tour-filter .resizer {
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  fill: rgba(0, 0, 0, 0.4);
+}
+.tour-filter .resizer .arrup {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+}
+.tour-filter .resizer .arrdown {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+}
+@media screen and (orientation: landscape) {
+  .tour-filter .resizer {
+    visibility: hidden;
+  }
+}
+.tour-filter .filter-body {
+  content-visibility: auto;
+  transition-delay: 0s;
+  transition: max-height 0.2s ease-out;
+  padding: 0 0.2rem;
+}
+.tour-filter .hidden {
+  max-height: 0;
+}
+.tour-filter .controls-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.25rem 0.2rem;
+}
+.tour-filter .controls-row label {
+  font-size: 0.85rem;
+  width: 6rem;
+}
+.tour-filter .special {
+  margin: 0.2rem 0;
+  padding: 0.4rem 0;
+  font-weight: bold;
+}
+.tour-filter input {
+  font-size: 0.9rem;
+}
+.tour-filter .checkbox-label {
+  cursor: default;
+}
+@media screen and (orientation: portrait) {
+  .tour-filter {
+    margin: 0;
+  }
+}
+
+.month-range-chooser {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.85rem;
+  border-radius: 0.25rem;
+}
+.month-range-chooser .month, .month-range-chooser .month-mobile {
+  font-family: monospace;
+  padding: 0.3em 0.3em;
+  margin: 0 0.1em;
+}
+.month-range-chooser .month-mobile {
+  padding: 0.4em 0.35em;
+}
+.month-range-chooser .selected {
+  background-color: rgba(3, 103, 166, 0.84);
+  border-radius: 0.2em;
+  color: white;
+}
+
+.feature-tooltip {
+  overflow: hidden;
+  cursor: default;
+  position: absolute;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 0.4rem;
+  transform: translate(-50%, -100%);
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+}
+.feature-tooltip .tournament-list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 40vh;
+  scrollbar-width: thin;
+}
+@media screen and (orientation: portrait) {
+  .feature-tooltip .tournament-list {
+    max-height: 25vh;
+  }
+}
+.feature-tooltip .tournament {
+  padding: 0.2rem 0.4rem;
+}
+.feature-tooltip .tournament:hover {
+  background-color: rgba(3, 103, 166, 0.24);
+}
+.feature-tooltip .header {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.feature-tooltip .header .date {
+  margin-right: 0.5em;
+}
+.feature-tooltip .header .location {
+  color: rgb(100, 100, 100);
+}
+.feature-tooltip .name-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.feature-tooltip .name-line .name {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+.feature-tooltip .bottom-info {
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 0.2rem 0.4rem;
+}
+
+.zoom-control {
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1vh;
+  z-index: 100;
+}
+.zoom-control .zoom-button {
+  margin: 0.5vh 0;
+  fill: rgba(4, 58, 93, 0.64);
+}
+@media screen and (orientation: landscape) {
+  .zoom-control {
+    top: 2vh;
+    right: 2vh;
+  }
+}
+
+.source-selector {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 50vh;
+  color: black;
+  padding: 0.2rem;
+}
+.source-selector .source-selector-header {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.source-selector .touryearlists {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow-y: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.source-selector .source-select-list {
+  display: block;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding: 0.2rem;
+}
+.source-selector .source-select-row {
+  padding: 0.4rem 0.5rem;
+}
+.source-selector .selected {
+  background-color: rgb(3, 103, 166);
+  color: white;
+}
+
+:root {
+  --clay: rgb(206, 103, 0);
+  --carpet: rgb(131, 182, 8);
+  --hard: rgb(3, 136, 220);
+  --grass: rgb(2, 164, 59);
+  --other: rgb(160, 160, 160);
+}
+
+.surface-color, .other-fill, .grass-fill, .hard-fill, .carpet-fill, .clay-fill {
+  color: white;
+}
+
+.clay-fill {
+  fill: var(--clay);
+  background-color: var(--clay);
+  border: 1px solid var(--clay);
+}
+
+.carpet-fill {
+  fill: var(--carpet);
+  background-color: var(--carpet);
+  border: 1px solid var(--carpet);
+}
+
+.hard-fill {
+  fill: var(--hard);
+  background-color: var(--hard);
+  border: 1px solid var(--hard);
+}
+
+.grass-fill {
+  fill: var(--grass);
+  background-color: var(--grass);
+  border: 1px solid var(--grass);
+}
+
+.other-fill {
+  fill: var(--other);
+  background-color: var(--other);
+  border: 1px solid var(--other);
+}
+
+.small-badge, .outdoors-badge, .indoors-badge {
+  padding: 0 3px;
+  font-weight: normal;
+  font-size: 0.75rem;
+  border-radius: 0.2rem;
+}
+
+.indoors-badge {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+.outdoors-badge {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.live {
+  animation: animate 1s linear infinite;
+  color: rgb(255, 0, 0);
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+:root {
+  --popup-bg: rgb(255, 255, 255);
+  --popup-fg: rgb(0, 0, 0);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  overscroll-behavior: none;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.main-grid-wrapper {
+  height: 100%;
+  max-height: 100%;
+}
+
+.fullscreen {
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (orientation: portrait) {
+  .fullscreen {
+    flex-direction: column-reverse;
+  }
+}
+.map {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.modal-dialog-wrapper {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*# sourceMappingURL=app.css.map */
