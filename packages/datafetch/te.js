@@ -1,10 +1,12 @@
 const puppeteer = require('puppeteer-core');
 const fcb = require('find-chrome-bin');
 const { writeFileSync  } = require('fs');
+const { getDataFolder } = require('./Common.js');
+
 
 const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
-const download = async (yearFrom, yearTo) => {
+const downloadTE = async (yearFrom, yearTo) => {
     const chromeInfo = await fcb.findChrome({});
     const browser = await puppeteer.launch({
         executablePath: chromeInfo?.executablePath,
@@ -74,7 +76,7 @@ const download = async (yearFrom, yearTo) => {
             return arr;
         });
         try {
-            let fileName = `./data/te/${year}.json`;
+            let fileName = `${getDataFolder()}te/${year}.json`;
             await writeFileSync(fileName, JSON.stringify(json), 'utf8');
                 console.log(`File ${fileName} successfully saved to disk`);
         } catch (error) {
@@ -96,8 +98,8 @@ const download = async (yearFrom, yearTo) => {
     }
 
     await browser.close();
-}
+};
 
-
-download(2025, 2025);
+module.exports = { downloadTE };
+downloadTE(2015, 2025);
 

@@ -1,9 +1,10 @@
 const puppeteer = require('puppeteer-core');
 const fcb = require('find-chrome-bin');
 const { writeFileSync  } = require('fs');
+const { getDataFolder } = require('./Common.js');
 
 
-let download = async(yearFrom, yearTo) => {
+let downloadITF = async(yearFrom, yearTo) => {
     const chromeInfo = await fcb.findChrome({});
 
     const browser = await puppeteer.launch({
@@ -49,7 +50,7 @@ let download = async(yearFrom, yearTo) => {
             }
 
             try {
-                await writeFileSync(`./data/itf/${tour}_${year}.json`, JSON.stringify(allTournaments), 'utf8');
+                await writeFileSync(`${getDataFolder()}itf/${tour}_${year}.json`, JSON.stringify(allTournaments), 'utf8');
                 console.log('Data successfully saved to disk');
             } catch (error) {
                 console.log('An error has occurred ', error);
@@ -61,7 +62,7 @@ let download = async(yearFrom, yearTo) => {
 
 };
 
-
-download(2010, 2024);
+module.exports = { downloadITF };
+downloadITF(2025, 2025);
 
 

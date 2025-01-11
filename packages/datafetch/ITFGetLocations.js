@@ -1,10 +1,11 @@
 const { readFileSync, writeFileSync, readdirSync  } = require('fs');
 const https = require("https");
 const {downloadLocations} = require("./collect_locations");
+const { getDataFolder } = require('./Common.js');
 
 
 
-collectLocations = async (path) => {
+collectLocationsITF = async (path) => {
     const placesSet = new Set([]);
 
     const files = readdirSync(path);
@@ -31,6 +32,6 @@ collectLocations = async (path) => {
     downloadLocations(placesJSON, `${path}/locations.json`);
 }
 
-
-collectLocations("./data/itf");
+module.exports = { collectLocationsITF };
+collectLocationsITF(`${getDataFolder()}itf`);
 
