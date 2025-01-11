@@ -99,5 +99,5 @@ const download = async (yearFrom, yearTo) => {
 }
 
 
-download(2010, 2024);
+download(2025, 2025);
 
