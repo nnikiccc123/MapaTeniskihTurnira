@@ -1,6 +1,5 @@
 import React, {JSX} from 'react';
 import {XIcon} from "../ui/XIcon";
-import {isMobile} from "../utils/CommonUtil";
 
 
 interface MapZoomControlProps {

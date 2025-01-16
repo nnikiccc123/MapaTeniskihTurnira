@@ -48,13 +48,6 @@ export class SourceSelector extends React.Component<SourceSelectorProps, SourceS
         };
     }
 
-    componentDidMount() {
-        EventUtils.addGlobalKeyDown(this.onKey);
-    }
-
-    componentWillUnmount() {
-        EventUtils.removeGlobalKeyDown(this.onKey);
-    }
 
     onClick = (e) => {
         if (e.target.className === "modal-dialog-wrapper") {
@@ -62,11 +55,6 @@ export class SourceSelector extends React.Component<SourceSelectorProps, SourceS
         }
     }
 
-    onKey = (e) => {
-        if (e.key === "Escape") {
-            this.props.onCancel();
-        }
-    }
 
     render() {
         let tennisTourInfos = getTennisTourInfos();

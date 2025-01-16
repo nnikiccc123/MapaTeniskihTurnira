@@ -55,10 +55,6 @@ export class TournamentsSideBar extends React.Component<TournamentsSideBarProps,
         };
     }
 
-    private setCompact = (b: boolean): void => {
-        Global.compactTableView = b || isMobile;
-        this.setState({compact: b});
-    }
 
     setMapExtent(extent: Extent) {
         this.mapExtent = extent;

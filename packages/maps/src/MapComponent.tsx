@@ -24,9 +24,9 @@ import {MapUtils, setMapInstance} from "./utils/MapUtils";
 import {isMobile, openUrl} from "./utils/CommonUtil";
 import {Extent} from "ol/extent";
 import {Global} from "./utils/GlobalUtils";
-import {MapZoomControl} from "./comp/MapZoomControl";
+import {MapZoomControl} from "comp/MapZoomControl";
 import Overlay from "ol/Overlay";
-import {TennisFactory} from "./utils/TennisFactory";
+import {TennisFactory} from "utils/TennisFactory";
 
 
 export enum LoadingState {
@@ -35,12 +35,9 @@ export enum LoadingState {
     error
 }
 
-
 interface MapProps {
     zoom: number;
 }
-
-
 
 interface MapState {
     tourInfoLoadingState: LoadingState;
@@ -50,7 +47,6 @@ interface MapState {
     loadingCalendarState: LoadingState;
     tournaments: TennisTournament[];
 }
-
 
 
 export class MapComponent extends React.Component<MapProps, MapState> {
@@ -124,15 +120,7 @@ export class MapComponent extends React.Component<MapProps, MapState> {
 
         this.map.on('singleclick', this.onClick);
 
-        // this.setBaseMap(new OLXYZSource({url: 'https://api.mapbox.com/styles/v1/vnikic/cjilplk0i4n4o2rnxc1ht4rnl/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoidm5pa2ljIiwiYSI6ImNqaWxwazV4czA3cXgzcWs3OTdsNmd4cmgifQ.M2a6z4CUSfG1sM0qX2QdeA'}));
         this.setBaseMap(new OLXYZSource({url: 'https://api.mapbox.com/styles/v1/mapbox/light-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoidm5pa2ljIiwiYSI6ImNqaWxwazV4czA3cXgzcWs3OTdsNmd4cmgifQ.M2a6z4CUSfG1sM0qX2QdeA'}));
-        // this.setBaseMap(new StadiaMaps({
-        //     // layer: 'alidade_smooth_dark',
-        //     layer: 'alidade_smooth',
-        //     retina: true,
-        //     // apiKey: 'OPTIONAL'
-        // }),);
-
         this.extentChanged();
 
         loadTennisTourInfos(
