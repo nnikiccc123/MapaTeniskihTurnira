@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {RefObject} from 'react';
 import {getTennisTourInfos, TournamentUtils} from "../utils/TournamentUtils";
 import {XButton} from "../ui/XButton";
 import {createFlexSpacer} from "../utils/ReactUtils";

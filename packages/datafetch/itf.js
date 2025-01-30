@@ -1,10 +1,13 @@
+
 const puppeteer = require('puppeteer-core');
 const fcb = require('find-chrome-bin');
+
 const { writeFileSync  } = require('fs');
 const { getDataFolder } = require('./Common.js');
 
 
 let downloadITF = async(yearFrom, yearTo) => {
+
     const chromeInfo = await fcb.findChrome({});
 
     const browser = await puppeteer.launch({
