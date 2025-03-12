@@ -8,7 +8,6 @@ const { getDataFolder } = require('./Common.js');
 
 collectLocationsTE = async (path) => {
     const placesSet = new Set([]);
-
     const files = readdirSync(path);
     for (let fn of files) {
         const data = readFileSync(`${path}/${fn}`, { encoding: 'utf8', flag: 'r' });
@@ -23,7 +22,6 @@ collectLocationsTE = async (path) => {
 
     let placesJSON = [];
     placesSet.forEach(v => placesJSON.push(v));
-
     downloadLocations(placesJSON, `${path}/locations.json`);
 };
 

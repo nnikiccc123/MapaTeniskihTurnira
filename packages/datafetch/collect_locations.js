@@ -5,9 +5,7 @@ let fs = require('fs');
 let allPlacesWithLocations = [];
 
 const downloadLocations = (places, locationsFilePath) => {
-
     const placeSet = new Set();
-
     if (fs.existsSync(locationsFilePath)) {
         const data = fs.readFileSync(locationsFilePath);
         allPlacesWithLocations = JSON.parse(data);
@@ -24,7 +22,8 @@ const downloadLocations = (places, locationsFilePath) => {
             let place = places.pop();
             // only if not already located
             if (!placeSet.has(place)) {
-                const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURI(place)}.json?limit=1&access_token=pk.eyJ1Ijoidm5pa2ljIiwiYSI6ImNqaWxwazV4czA3cXgzcWs3OTdsNmd4cmgifQ.M2a6z4CUSfG1sM0qX2QdeA`
+                const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURI(place)}.json?limit=1&
+                             access_token=pk.eyJ1Ijoidm5pa2ljIiwiYSI6ImNqaWxwazV4czA3cXgzcWs3OTdsNmd4cmgifQ.M2a6z4CUSfG1sM0qX2QdeA`
                 https.get(url, resp => {
                     let data = "";
                     resp.on("data", chunk => data += chunk);

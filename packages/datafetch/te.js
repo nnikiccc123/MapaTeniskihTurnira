@@ -1,5 +1,7 @@
+
 const puppeteer = require('puppeteer-core');
 const fcb = require('find-chrome-bin');
+
 const { writeFileSync  } = require('fs');
 const { getDataFolder } = require('./Common.js');
 
@@ -7,6 +9,7 @@ const { getDataFolder } = require('./Common.js');
 const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 const downloadTE = async (yearFrom, yearTo) => {
+
     const chromeInfo = await fcb.findChrome({});
     const browser = await puppeteer.launch({
         executablePath: chromeInfo?.executablePath,
@@ -102,4 +105,6 @@ const downloadTE = async (yearFrom, yearTo) => {
 
 module.exports = { downloadTE };
 downloadTE(2015, 2025);
+
+
 

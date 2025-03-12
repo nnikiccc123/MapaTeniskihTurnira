@@ -34,7 +34,10 @@ let downloadITF = async(yearFrom, yearTo) => {
 
     const downloadMonth = async (month, year, tourCode = "JT") => {
         const fm = month < 10 ? `0${month}` : String(month);
-        const url = `https://www.itftennis.com/tennis/api/TournamentApi/GetCalendar?circuitCode=${tourCode}&searchString=&skip=0&take=100&nationCodes=&zoneCodes=&dateFrom=${year}-${fm}-01&dateTo=${year}-${fm}-${daysInMonth(month, year)}&indoorOutdoor=&categories=&isOrderAscending=true&orderField=startDate&surfaceCodes=`;
+        const url = `https://www.itftennis.com/tennis/api/TournamentApi/GetCalendar?circuitCode=
+                     ${tourCode}&searchString=&skip=0&take=100&nationCodes=&zoneCodes=&dateFrom=
+                     ${year}-${fm}-01&dateTo=${year}-${fm}-${daysInMonth(month, year)}
+                     &indoorOutdoor=&categories=&isOrderAscending=true&orderField=startDate&surfaceCodes=`;
         await page.goto(url);
         const json = await page.evaluate(() =>  {
             return JSON.parse(document.querySelector("body").innerText);
@@ -53,7 +56,8 @@ let downloadITF = async(yearFrom, yearTo) => {
             }
 
             try {
-                await writeFileSync(`${getDataFolder()}itf/${tour}_${year}.json`, JSON.stringify(allTournaments), 'utf8');
+                await writeFileSync(`${getDataFolder()}itf/${tour}_${year}.json`,
+                    JSON.stringify(allTournaments), 'utf8');
                 console.log('Data successfully saved to disk');
             } catch (error) {
                 console.log('An error has occurred ', error);

@@ -1,10 +1,5 @@
 import React, {RefObject} from 'react';
-import Map from "ol/Map";
-import TileLayer from "ol/layer/Tile";
-import * as Proj from "ol/proj";
-import {Feature, View} from "ol";
-import OLXYZSource from "ol/source/XYZ";
-import OLSource from "ol/source/Source";
+import './css/app.css';
 import {
     getTennisTourInfos,
     getTournamentInfoFactory,
@@ -13,20 +8,25 @@ import {
     TennisTournament
 } from "./utils/TournamentUtils";
 import {TournamentsSideBar} from "comp/TournamentsSideBar";
-
-import {Cluster, StadiaMaps, Vector} from "ol/source";
-import VectorLayer from "ol/layer/Vector";
-
-import './css/app.css';
-import {Point} from "ol/geom";
-import {Layer} from "ol/layer";
 import {MapUtils, setMapInstance} from "./utils/MapUtils";
 import {isMobile, openUrl} from "./utils/CommonUtil";
 import {Extent} from "ol/extent";
 import {Global} from "./utils/GlobalUtils";
 import {MapZoomControl} from "comp/MapZoomControl";
-import Overlay from "ol/Overlay";
 import {TennisFactory} from "utils/TennisFactory";
+
+import Map from "ol/Map";
+import TileLayer from "ol/layer/Tile";
+import * as Proj from "ol/proj";
+import {Feature, View} from "ol";
+import OLXYZSource from "ol/source/XYZ";
+import OLSource from "ol/source/Source";
+import {Cluster, StadiaMaps, Vector} from "ol/source";
+import VectorLayer from "ol/layer/Vector";
+import {Point} from "ol/geom";
+import {Layer} from "ol/layer";
+import Overlay from "ol/Overlay";
+
 
 
 export enum LoadingState {
@@ -111,13 +111,10 @@ export class MapComponent extends React.Component<MapProps, MapState> {
 
         this.map.on('movestart', e => {
         });
-
         this.map.on('moveend', () => {
             this.extentChanged();
         });
-
         this.map.on('pointermove', this.onMove);
-
         this.map.on('singleclick', this.onClick);
 
         this.setBaseMap(new OLXYZSource({url: 'https://api.mapbox.com/styles/v1/mapbox/light-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoidm5pa2ljIiwiYSI6ImNqaWxwazV4czA3cXgzcWs3OTdsNmd4cmgifQ.M2a6z4CUSfG1sM0qX2QdeA'}));
@@ -179,13 +176,11 @@ export class MapComponent extends React.Component<MapProps, MapState> {
                     vectorSource.addFeature(feature);
                 }
             }
-
             const clusterSource = new Cluster({
                 distance: 14,
                 minDistance: 14,
                 source: vectorSource,
             });
-
             this.tourLayer = new VectorLayer({
                 source: clusterSource,
                 style: (feature, resolution) => MapUtils.getClusterTournamentStyle(feature)
@@ -226,7 +221,8 @@ export class MapComponent extends React.Component<MapProps, MapState> {
                 }
                 const ext = feature.getGeometry().getExtent();
                 this.tooltipFeature = feature;
-                this.tooltipOverlay = MapUtils.createTournamentsTooltipOverlay(this.map, tournaments, [(ext[0] + ext[2]) / 2, (ext[1] + ext[3]) / 2]);
+                this.tooltipOverlay = MapUtils.createTournamentsTooltipOverlay(this.map, tournaments,
+                                                        [(ext[0] + ext[2]) / 2, (ext[1] + ext[3]) / 2]);
 
                 this.highlightTournament(tournaments[0]);
             }

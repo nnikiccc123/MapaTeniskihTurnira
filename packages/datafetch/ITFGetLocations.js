@@ -7,13 +7,11 @@ const { getDataFolder } = require('./Common.js');
 
 collectLocationsITF = async (path) => {
     const placesSet = new Set([]);
-
     const files = readdirSync(path);
     for (let fn of files) {
         if (fn.startsWith("JT_") || fn.startsWith("MT_") || fn.startsWith("WT_")) {
             const data = readFileSync(`${path}/${fn}`, {encoding: 'utf8', flag: 'r'});
             const arr = JSON.parse(data);
-            console.log(fn);
             for (let t of arr) {
                 if (t?.location) {
                     let place = t?.location.trim();
@@ -25,10 +23,8 @@ collectLocationsITF = async (path) => {
             }
         }
     }
-
     let placesJSON = [];
     placesSet.forEach(v => placesJSON.push(v));
-
     downloadLocations(placesJSON, `${path}/locations.json`);
 }
 
