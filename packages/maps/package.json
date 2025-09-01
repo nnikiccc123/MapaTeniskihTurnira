@@ -2,6 +2,7 @@
   "name": "eventmaps",
   "version": "0.1.1",
   "private": true,
+  "homepage": "https://github.com/nnikiccc123/MapaTeniskihTurnira",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +11,7 @@
     "@types/node": "^16.18.71",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "gh-pages": "^6.3.0",
     "ol": "^8.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,7 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
