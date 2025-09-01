@@ -29,7 +29,6 @@ export class TournamentsTooltip extends React.Component<TournamentsTooltipProps,
 
         if (tournaments !== null && tournaments.length > 0) {
             const maxToShow = this.props.maxtoshow || 8;
-            // for (let i = 0; i < Math.min(maxToShow, tournaments.length); i++) {
             for (let i = 0; i < tournaments.length; i++) {
                 const t = tournaments[i];
                 const infoEl = (

@@ -76,11 +76,12 @@ export class SourceSelector extends React.Component<SourceSelectorProps, SourceS
             )
             if (tti.id === this.state.tourCode) {
                 for (let y = tti.yearTo; y >= tti.yearFrom; y--) {
-                    years.push(<SelectionRow content={y} selected={this.state.year === y} onSelect={() => this.setState({year: y})} />);
+                    years.push(<SelectionRow content={y}
+                                             selected={this.state.year === y}
+                                             onSelect={() => this.setState({year: y})} />);
                 }
             }
         }
-
 
         return (
             <div className={"modal-dialog-wrapper"} onClick={this.onClick}>

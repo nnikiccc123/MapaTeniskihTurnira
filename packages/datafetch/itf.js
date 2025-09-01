@@ -14,7 +14,6 @@ let downloadITF = async(yearFrom, yearTo) => {
         executablePath: chromeInfo?.executablePath,
         defaultViewport: null,
         headless: true,
-        args: [`--window-size=1200,700`, `--ignore-certificate-errors`]
     });
 
     let allPages = await browser.pages().catch(error => console.error(error));
